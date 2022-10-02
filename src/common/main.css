@@ -1,0 +1,56 @@
+/* COLORS */
+
+:root {
+    --main-color: #fff;
+    --sec-color: #0d1117;
+    --third-color: #161b22;
+    --important-color: #e54141;
+}
+
+/* SPINNER STYLES */
+
+.spinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.spinner::before, 
+.spinner:after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+}
+.spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        0deg, #00DAE8 0%,
+        #8E00CC 100% );
+    animation: spin 0.5s infinite linear;
+}
+.spinner:after {
+    width: 85%;
+    height: 85%;
+    background-color: #fff;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/* ANIMATIONS */
+
+@keyframes softlyAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
